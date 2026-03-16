@@ -21,7 +21,7 @@ driver = new ChromeDriver();
 }
 
 @Test
-public void testTitle(){
+public void testTitle() throws InterruptedException {
 
 System.out.println("Opening website: https://www.selenium.dev/");
 
@@ -37,6 +37,10 @@ System.out.println("Verifying title contains the word 'Selenium'");
 Assert.assertTrue(title.contains("Selenium"));
 
 System.out.println("Title verification PASSED");
+
+/* Wait for 10 seconds before finishing test */
+System.out.println("Waiting 10 seconds before closing browser...");
+Thread.sleep(10000);
 }
 
 @AfterTest
